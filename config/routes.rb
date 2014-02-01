@@ -1,9 +1,12 @@
 IndustryDiy::Application.routes.draw do
+  get "users/new"
   resources :products
+  resources :users
 
   root 'static_pages#home'
   match '/about',    to: 'static_pages#about',    via: 'get'
   match '/create',    to: 'products#new',    via: 'get'
+  match '/signup',    to: 'users#new',    via: 'get'
   
 
   # The priority is based upon order of creation: first created -> highest priority.
